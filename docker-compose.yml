@@ -2,7 +2,10 @@ version: "3.8"
 
 services:
   redis:
-    image: redis:5
+    container_name: redis
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.redis
     ports:
       - 6379:6379
   backend:
